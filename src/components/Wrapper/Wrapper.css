@@ -1,19 +1,36 @@
 .wrapper {
   
-  background-color:black;
-  /*text-align:center;*/
-  /*padding: 20px;*/
+  background-color:#110a09;
+  font-size:22px;
   color:red;
-
+  height:600px;
+  
 }
 
 h1{
   text-align:center;
   margin-top:30px;
-  font-size:50px;
+  font-size:90px;
   font-weight:bold;
 
 }
+
+h1:hover{
+  color:#02e1ff;
+}
+
+h3:hover{
+  color:#02e1ff;
+}
+
+label:hover{
+  color:#02e1ff;
+}
+
+label{
+  font-size:20px;
+}
+
 .email{
   margin:10px;
   height:30px;
@@ -22,35 +39,34 @@ h1{
 }
 
 .password{
-  margin:10px;
+   height: 60px;
+   margin-top: 20px;
 
 }
 
 form{
   height:200px;
   margin:auto;
+  margin-left:1100px;
 }
 
-.user{
-  height:25px;
-}
- 
-.pass{
-  height:25px;
-}
+
 
 .enter{
-  width:100px;
-  color:red;
+  width:130px;
+  color:black;
+  background-color:red;
+  height:25px;
 }
 
-.enter hover{
-  background-color:green;
+.enter:hover{
+  background-color:#02e1ff;
 }
 
 .radio{
-  text-align:center;
-  
+  /*text-align:center;*/
+  margin: 10px;
+    /*margin-left: 700px;*/
 }
 
 
