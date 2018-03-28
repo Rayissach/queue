@@ -86,12 +86,13 @@ submit {
   margin-right: 75px;
 }
 
-.signup-form,
-.login-form {
-  max-width: 500px;
-  background-color: white;
-  margin: 0 auto;
-}
+  .signup-form,
+  .login-form {
+    max-width: 500px;
+    background-color: rgba(202, 202, 202, 0.815);
+    margin: 0 auto;
+  }
+  
 
 .create-btn {
   width: 70%;
