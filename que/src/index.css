@@ -1,5 +1,105 @@
-body {
+/* body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+} */
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #006774;
+}
+
+a,
+a:hover {
+  color: #00bcd4;
+  text-decoration: none;
+}
+
+input,
+button,
+submit {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: white;
+}
+
+.index-bcg {
+  /* background: url('../images/bcg.jpg') no-repeat center center fixed; */
+  background: blue;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.login-form {
+  height: 500px;
+}
+
+.login-form img,
+.signup-form img {
+  width: 40%;
+  text-align: center;
+  margin: 40px auto 40px auto;
+  display: block;
+}
+
+.login-form p,
+.signup-form p {
+  text-align: center;
+}
+
+.vertical-center {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.login-username,
+.signup-username {
+  margin: 50px auto 0;
+  width: 70%;
+}
+
+.login-password,
+.signup-email,
+.signup-first,
+.signup-last,
+.signup-password,
+.signup-attendant {
+  width: 70%;
+  margin: 20px auto;
+}
+
+.login-btn {
+  float: left;
+  width: 30%;
+  margin-left: 75px;
+}
+
+.signup-btn {
+  float: right;
+  width: 30%;
+  margin-top: 0 !important;
+  margin-right: 75px;
+}
+
+.signup-form,
+.login-form {
+  max-width: 500px;
+  background-color: white;
+  margin: 0 auto;
+}
+
+.create-btn {
+  width: 70%;
+  margin: 50px auto 70px auto;
+}
+
+.checkbox {
+  text-align: center;
+  width: 100%;
+  margin: 30px 0 50px 0;
 }
