@@ -1,10 +1,6 @@
-.wrapper {
-  
-  background-color:#110a09;
-  font-size:22px;
-  color:red;
-  height:600px;
-  
+
+input{
+  height:25px;
 }
 
 h1{
@@ -12,23 +8,29 @@ h1{
   margin-top:30px;
   font-size:90px;
   font-weight:bold;
+  color:white;
 
 }
 
 h1:hover{
-  color:#02e1ff;
+  color:black;
 }
 
 h3:hover{
-  color:#02e1ff;
+  color:black;
+}
+
+h3{
+  color:white;
 }
 
 label:hover{
-  color:#02e1ff;
+  color:black;
 }
 
 label{
   font-size:20px;
+  color:white;
 }
 
 .email{
@@ -55,12 +57,13 @@ form{
 .enter{
   width:130px;
   color:black;
-  background-color:red;
+  background-color:white;
   height:25px;
 }
 
 .enter:hover{
-  background-color:#02e1ff;
+  background-color:black;
+  color:white;
 }
 
 .radio{

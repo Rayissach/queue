@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Wrapper from "./components/Wrapper";
-
+import "./App.css";
 
 
 
@@ -21,8 +21,9 @@ change = e =>{
   // Map over this.state.friends and render a FriendCard component for each friend object
   render() {
     return (
+      <div className="jose">
       <Wrapper>
-        <h1>JukeBox</h1>
+        <h1>Queue</h1>
 
         <div className="container">
           <div className="row">
@@ -72,6 +73,7 @@ change = e =>{
      	   </div>
        </form>
       </Wrapper>
+      </div>
     );
   }
 
