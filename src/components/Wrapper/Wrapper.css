@@ -6,26 +6,27 @@ input{
 h1{
   text-align:center;
   margin-top:30px;
-  font-size:90px;
+  font-size:150px;
   font-weight:bold;
   color:white;
 
 }
 
 h1:hover{
-  color:black;
+  color:#20fcc5;
 }
 
-h3:hover{
-  color:black;
+h2:hover{
+  color:#20fcc5;
 }
 
-h3{
+h2{
+  font-size:25px;
   color:white;
 }
 
 label:hover{
-  color:black;
+  color:#20fcc5;
 }
 
 label{
@@ -49,7 +50,7 @@ label{
 form{
   height:200px;
   margin:auto;
-  margin-left:1100px;
+  margin-left:900px;
 }
 
 
@@ -59,11 +60,13 @@ form{
   color:black;
   background-color:white;
   height:25px;
+  font-size:15px;
+
 }
 
 .enter:hover{
-  background-color:black;
-  color:white;
+  background-color:#20fcc5;
+  color:black;
 }
 
 .radio{

@@ -31,7 +31,7 @@ change = e =>{
 
              <form>
               <div className="radio">
-                <h3>Sign in as:</h3>
+                <h2>Sign in as:</h2>
                 <label>
                   <input type="radio" 
                   name="type" value="dj" />
