@@ -79,7 +79,9 @@ class App extends Component {
         this.audio.play();
       }*/
 
-      window.open("https://open.spotify.com/embed?uri=" + song.track.uri, 'spotify_app');
+      const iframe = document.querySelector('#spotify_app');
+      iframe.style.display = 'block';
+      iframe.src = "https://open.spotify.com/embed?uri=" + song.track.uri;
       
     } else {
       stopSong();

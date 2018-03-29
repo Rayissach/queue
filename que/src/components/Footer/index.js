@@ -7,13 +7,14 @@ import './Footer.css';
 const Footer = ({ stopSong, pauseSong, resumeSong, audioControl}) => {
   return(
     <div className='footer'>
-      <SongControls
+      {/*<SongControls
         stopSong={ stopSong }
         pauseSong={ pauseSong }
         resumeSong={ resumeSong }
         audioControl={ audioControl }
       />
-      <VolumeControls />
+      <VolumeControls />*/}
+      <iframe src="" id="spotify_app" style={{position:'relative', bottom:0, left:0, width:'100%', height:'200px', zIndex:9999}} frameborder="0" allow="encrypted-media" allowtransparency="true"></iframe>
     </div>
   );
 };
