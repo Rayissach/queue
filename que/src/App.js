@@ -74,8 +74,13 @@ class App extends Component {
 
     if(this.audio === undefined){
       playSong(song.track);
-      this.audio = new Audio(song.track.preview_url);
-      this.audio.play();
+      if(song.track.preview_url) {
+        this.audio = new Audio(song.track.preview_url);
+        this.audio.play();
+      }
+
+      document.querySelector('#spotify_app').src = "https://open.spotify.com/embed?uri" + song.track.uri;
+      
     } else {
       stopSong();
       this.audio.pause();

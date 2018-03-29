@@ -88,11 +88,14 @@ export const searchSongs = (searchTerm, accessToken) => {
       }
       return res.json();
     }).then(res => {
-      res.items = res.tracks.items.map(item => {
+      //res.items = res.tracks.items.filter(item => item.preview_url !== null)
+      res.items = res.tracks.items;
+      res.items = res.items.map(item => {
         return {
           track: item
-        };
+        };          
       });
+
       dispatch(searchSongsSuccess(res.items));
     }).catch(err => {
       dispatch(fetchSongsError(err));
