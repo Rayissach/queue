@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
+import Particles from 'react-particles-js';
+// import logo from './logo.svg';
+import './index.css';
+import Login from './components/Login';
+// import Wrapper from './components/Wrapper';
+import ParticlesConfig from './particlesjs-config.json';
+
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
-import axios from 'axios';
 import { connect } from 'react-redux';
 import { fetchUser } from './actions/userActions';
 import { setToken } from './actions/tokenActions';
 import { playSong, stopSong, pauseSong, resumeSong } from './actions/songActions';
-import './App.css';
-import Login from './components/Login';
-// import Particles from 'react-particles-js';
-// import ParticlesConfig from './particlesjs-config.json';
+import './App2.css';
+import axios from 'axios';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -19,42 +23,32 @@ import ArtWork from './components/ArtWork';
 import MainHeader from './components/MainHeader';
 import SideMenu from './components/SideMenu';
 
-
-
 class App extends Component {
-  state = { loggedIn: false} 
-  static audio;
+  
+  state = {
+    firstname: "",
+    lastname: "",
+    username: "",
+    password: "",
+    email: "",
 
+  };
+  componentDidMount() {
 
-
-  handleLogin = event => {
-    event.preventDefault();
     let hashParams = {};
     let e, r = /([^&;=]+)=?([^&;]*)/g,
       q = window.location.hash.substring(1);
     while ( e = r.exec(q)) {
       hashParams[e[1]] = decodeURIComponent(e[2]);
     }
+
     if(!hashParams.access_token) {
       window.location.href = 'https://accounts.spotify.com/authorize?client_id=230be2f46909426b8b80cac36446b52a&scope=playlist-read-private%20playlist-read-collaborative%20playlist-modify-public%20user-read-recently-played%20playlist-modify-private%20ugc-image-upload%20user-follow-modify%20user-follow-read%20user-library-read%20user-library-modify%20user-read-private%20user-read-email%20user-top-read%20user-read-playback-state&response_type=token&redirect_uri=http://localhost:3000/callback';
     } else {
       this.props.setToken(hashParams.access_token);
     }
-    this.setState({loggedIn: true})
 
   }
-// componentDidMount(){
-//   const BASE_URL = 'https://api.spotify.com/v1/search?';
-//   const FETCH_URL = 'https://api.spotify.com/v1/artists/0OdUWJ0sBjDrqHygGUXeCF';
-//   // var accessToken = .......
-
-//   axios.get(FETCH_URL, {headers : {'Authorization' : this.props.token}})
-//   .then(res => {
-//     console.log(res);
-
-//   }) 
-// }
-
   componentWillReceiveProps(nextProps) {
     if(nextProps.token) {
       this.props.fetchUser(nextProps.token);
@@ -111,66 +105,36 @@ class App extends Component {
     }
   }
 
+  // handle any changes to the input fields
+  handleInputChange = event => {
+    // Pull the name and value properties off of the event.target (the element which triggered the event)
+    const { name, value } = event.target;
+
+    // Set the state for the appropriate input field
+    this.setState({
+      [name]: value
+    });
+  };
+
+  // When the form is submitted, prevent the default event and alert the username and password
+  handleFormSubmit = event => {
+    event.preventDefault();
+    alert(`First Name: ${this.state.firstname}\nLast Name: ${this.state.lastname}\nEmail: ${this.state.email}\nUsername: ${this.state.username}\nPassword: ${this.state.password}\n`);
+    this.setState({ firstname: "", lastname: "", email: "", username: "", password: ""});
+  };
+
   render() {
     return (
       <div>
-      {!this.props.token ?
-
-
-       
-       <Login className="login-style" handleLogin = {this.handleLogin}/>
-       
-      :
-
-      <div className='App'>
-        <div className='app-container'>
-
-          <div className='left-side-section'>
-            <SideMenu />
-            <UserPlaylists />
-            <ArtWork />
-          </div>
-
-          <div className='main-section'>
-            <Header />
-            <div className='main-section-container'>
-              <MainHeader
-                pauseSong={ this.pauseSong }
-                resumeSong={ this.resumeSong }
-              />
-              <MainView
-                pauseSong={this.pauseSong}
-                resumeSong={ this.resumeSong }
-                audioControl={ this.audioControl }
-              />
-            </div>
-          </div>
-
-          <Footer
-            stopSong={ this.stopSong }
-            pauseSong={ this.pauseSong }
-            resumeSong={ this.resumeSong }
-            audioControl={ this.audioControl }
-          />
-        </div>
+      <Particles params={ParticlesConfig} id="particles-js" className="particles-style" width="100%" height="100%">
+      </Particles>
+       {/* <Wrapper> */}
+       <Login className="login-style"/>
+       {/* </Wrapper> */}
       </div>
-      }
-
-      </div>
-    );
-  }
+    )
 }
-
-App.propTypes = {
-  token: PropTypes.string,
-  fetchUser: PropTypes.func,
-  setToken: PropTypes.func,
-  pauseSong: PropTypes.func,
-  playSong: PropTypes.func,
-  stopSong: PropTypes.func,
-  resumeSong: PropTypes.func,
-  volume: PropTypes.number
-};
+}
 
 const mapStateToProps = (state) => {
 

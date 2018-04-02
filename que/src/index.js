@@ -5,17 +5,21 @@ import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import reducers from './reducers';
 import App from './App';
+import App2 from './App2';
+import logger from 'redux-logger';
 
 //create the redux store
 const store = createStore(
   reducers,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-  applyMiddleware(thunk)
-
+  applyMiddleware(logger, thunk)
 );
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />	
+	  <div>
+	  	
+	    <App />	
+	  </div>
   </Provider>, document.getElementById('root')
 );
